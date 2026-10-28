@@ -74,3 +74,7 @@ O compose não cria a Evolution API, o backend nem o Supabase, e não sobe a apl
 ## Arquivos de configuração
 
 `tsconfig.json` define resolução NodeNext, decorators e regras TypeScript. `tsconfig.build.json` restringe o build a src e define rootDir, evitando que o simulador mova a saída para `dist/src/main.js`. `nest-cli.json` escolhe src e limpa a saída no build. `eslint.config.mjs` combina regras TypeScript com Prettier; `.prettierrc` define estilo. `test/jest-e2e.json` carrega `setup-env.ts` antes de importar o módulo raiz. JSON não aceita comentários; por isso suas decisões estão documentadas aqui.
+
+### Resolução dos imports
+
+O projeto usa imports relativos para arquivos internos e nomes de pacotes para dependências. Por isso, `baseUrl` não é necessário e foi removido do tsconfig. A resolução continua como NodeNext. A opção também foi descontinuada no [TypeScript 6.0](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html).
