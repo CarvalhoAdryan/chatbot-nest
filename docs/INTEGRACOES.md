@@ -98,3 +98,9 @@ Erros de validação 400 podem retornar `{ "message": "..." }` ou `{ "message": 
 O backend externo precisa guardar a chave, o conteúdo associado e o resultado junto da criação da denúncia, de forma atômica. Repetições com a mesma chave e conteúdo devem devolver o protocolo original. Chave reutilizada com conteúdo diferente deve ser tratada como conflito. Esse contrato precisa ser implementado na API externa; este repositório apenas envia o cabeçalho.
 
 Sem isso, se a API criar o registro e a resposta se perder, um novo `sim` pode duplicar a denúncia. Depois de editar os dados, o bot gera uma chave diferente. A retenção de chaves do backend deve cobrir sua política de tentativas e de recuperação.
+
+## Backend GeoLimp implementado
+
+A rota e a idempotência agora estão implementadas no repositório GeoLimp_backend.
+A disponibilidade depende de aplicar o SQL e implantar essa versão. Consulte o
+[guia conjunto](INTEGRACAO-CHATBOT-GEOLIMP.md).

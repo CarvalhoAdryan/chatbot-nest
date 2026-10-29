@@ -16,6 +16,7 @@
     "lint": "npm run lint --workspace whatsapp",
     "test": "npm run test --workspace whatsapp -- --runInBand",
     "test:e2e": "npm run test:e2e --workspace whatsapp -- --runInBand",
-    "typecheck": "npm run typecheck --workspace whatsapp"
+    "typecheck": "npm run typecheck --workspace whatsapp",
+    "test:integration": "node scripts/check-geolimp.cjs"
   }
 }

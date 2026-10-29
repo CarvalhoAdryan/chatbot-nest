@@ -21,10 +21,12 @@ describe('BackendClient', () => {
     }),
   );
   beforeEach(() => post.mockReset());
-  it('envia chave de idempotência e retorna protocolo real', async () => {
-    post.mockReturnValue(of({ data: { id: 'DEN-42' } }));
+  it('envia chave de idempotência e usa protocolo GeoLimp, não o UUID interno', async () => {
+    post.mockReturnValue(
+      of({ data: { id: '#DEN-2026-uuid', complaintId: 'internal-uuid' } }),
+    );
     expect(await client.createComplaint(payload, 'unique-key')).toEqual({
-      id: 'DEN-42',
+      id: '#DEN-2026-uuid',
     });
     expect(post).toHaveBeenCalledWith(
       'https://backend.example/bot/complaints',

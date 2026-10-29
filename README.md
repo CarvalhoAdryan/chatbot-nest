@@ -14,3 +14,7 @@ Bot de denúncias urbanas pelo WhatsApp, com fluxo por etapas, Evolution API, ba
 Execute os comandos npm nesta raiz. O projeto usa Node.js 22 ou superior e um único package-lock.json para o workspace whatsapp-bot.
 
 Com carinho, **Sigma Devs**. 🫶
+
+## Integração backend e WhatsApp
+
+Veja [configuração, contrato, banco e testes](docs/INTEGRACAO-CHATBOT-GEOLIMP.md).

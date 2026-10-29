@@ -39,6 +39,8 @@ export class BackendClient {
           },
         ),
       );
+      // GeoLimp retorna id como protocolo público e complaintId como UUID interno.
+      // A conversa exibe somente o protocolo.
       // Tipos TypeScript não garantem que a resposta externa respeita o contrato.
       const data = res.data as { id?: unknown } | null;
       if (!data || typeof data.id !== 'string' || !data.id.trim())
